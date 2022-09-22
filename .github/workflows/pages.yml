@@ -31,12 +31,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v2      
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v1
+        with:
+          version: 16.x
+      - run: npm ci
+      - run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload build directory
-          path: './build'
+          # Upload dist directory
+          path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
