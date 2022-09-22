@@ -1,5 +1,9 @@
 # economies-today
 
+Open-source repository for [https://economies.today/](https://economies.today/).
+Open to contributions.
+
+
 ## Project setup
 ```
 npm install
