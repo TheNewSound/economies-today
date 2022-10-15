@@ -17,6 +17,7 @@
         <path class="tax-arrowhead" d="M 10.92 8.378 Q 11.217 7.863 11.514 8.378 L 15.867 15.93 Q 16.164 16.445 15.57 16.445 L 6.864 16.445 Q 6.27 16.445 6.567 15.93 Z" transform="matrix(-0.000078, 1, -1, -0.000078, 17.746244, -6.216717)"></path>
       </marker>
       <path id="mypath" d="M 0,50 C 0 15 15 0 50 0" class="flow-liquid" pointer-events="stroke"/>
+
     </defs>
     <g>
       <g transform="translate(190,20)">
@@ -78,8 +79,10 @@
       </g>
       <path d="M 190,450 C 80 450 80 450 80 290" id="working" class="flow-liquid"/>
       <path d="M 140,240 C 190 220 300 220 350 240" id="investing" class="flow-liquid"/>
+      <path id="investing-hover" class="flow-liquid-hover" d="M 140,240 C 190 220 300 220 350 240"></path>
       <path d="M 360,260 C 300 280 190 280 150 260" class="flow-liquid"/>
       <path d="M 140,260 C 190 280 300 280 350 260" id="returns" fill="none" stroke="none" />
+
       <text >
         <textPath href="#investing" class="flow-label" startOffset="50%">Investing</textPath>
         <textPath href="#returns" class="flow-label" startOffset="50%">Returning profit</textPath>
@@ -93,8 +96,9 @@
         <textPath href="#employing" class="flow-label" startOffset="50%">Employing</textPath>
         <textPath href="#working" class="flow-label" startOffset="50%">Working</textPath>
       </text>
-
       <path display="none" class="flow-tax" d="M 246.959 19.209 C 422.606 19.209 532.386 209.353 444.562 361.467 C 356.739 513.582 137.18 513.582 49.357 361.467 C -27.451 228.433 46.487 59.044 196.262 24.913" transform="matrix(0.104528, -0.994522, 0.994522, 0.104528, -24.797894, 467.221399)"></path>
+
+
     </g>
     <switch>
       <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
@@ -167,6 +171,28 @@ export default {
   stroke: rgb(137, 225, 245);
   paint-order: stroke;
   stroke-width: 12px;
+}
+.flow-liquid-hover {
+  display: none;
+  fill: none;
+  stroke: rgb(255, 234, 0);
+  stroke-dashoffset: 0%;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0, 8;
+  stroke-width: 4px;
+  animation: draw 30s linear infinite;
+}
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 100%;
+  }
+  100% {
+    stroke-dashoffset: 0%;
+  }
+}
+.flow-liquid:hover ~ #investing-hover, .flow-liquid-hover:hover {
+  display: block;
 }
 .flow-tax {
   stroke-dashoffset: 0px;
