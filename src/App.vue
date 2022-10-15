@@ -25,7 +25,7 @@
         <switch>
         <foreignObject class="svg-textbox" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
           <div xmlns="http://www.w3.org/1999/xhtml">
-              <div class="svg-textbox">
+              <div class="svg-textbox" style="padding-top: 15px">
                 Products and Services Market
               </div>
           </div>
@@ -136,7 +136,6 @@ export default {
   height: 60px;
   fill: white;
   stroke: black;
-  padding: 15px 10px 0px 0px;
   display: inline-block;
   font-size: 12px;
   pointer-events: all;
